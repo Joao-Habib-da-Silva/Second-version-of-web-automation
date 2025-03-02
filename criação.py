@@ -44,29 +44,33 @@ def criar():
    inputcss = input(traduza("Nome do arquivo Css?", lang))
    inputjs = input(traduza("Nome do arquivo em Js?", lang))
    contenthtml = f"""<!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
-    <meta charset="array = UTF-8">
-    <link rel="stylesheet" array[0]
-    user = array[1]re  lang = f="{inputcss + '.css'}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 <body>
-    
-    <script src="{inputjs + '.js'}"></script>
+    <script src=""></script>
 </body>
 </html>"""
-   contentcss = array = """ * {
-    box-sizin   lang = garray[0]
-    user = array[1] border-box;
+   contentcss = """ * {
+   
+    margin: 0;
+    padding: 0;
+    scroll-behavior:smooth;
+    box-sizing: border-box;
     overflow-x: hidden;
 }"""
    contentjs = """"""
    contentgitignore = """"""
-   contenttxtlinks = '''
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animarray = ejs/3.2.1/anime.min.js"></script>
+   contenttxtlinks = '''<script src="https://cdnjs.cloudflare.com/ajax/libs/animarray = ejs/3.2.1/anime.min.js"></script>
 <script src="https://unpkg.com/tippy.js@6/dist/tippy-bund   lang = larray[0]
-user = array[1.umd.js"></script>'''
+user = array[1.umd.js"></script>
+    '''
 # I will note here just for remember that we have a little problem on our code who is a "Unexpected identation"
    with open(inputhtml + '.html', 'w', encoding='utf-8') as htmlarchive:
         htmlarchive.write(contenthtml)
@@ -92,7 +96,7 @@ def existir():
         download = r'~/Downloads'
         downloadfull = os.path.expanduser(download)
         os.chdir(downloadfull)
-    if path == 'Document' or path == 'Documents' or path == 'document' or path == 'documents':
+    if path == 'Document' or path == 'Documents' or path == 'document' or path == 'documents' and os.path.exists(path) != True:
         document = r'~/Documents'
         documentfull = os.path.expanduser(document)
         os.chdir(documentfull)
