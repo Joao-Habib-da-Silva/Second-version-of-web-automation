@@ -48,13 +48,13 @@ def criar():
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="">
+    <title>{inputhtml + '.html'}</title>
+    <link rel="stylesheet" href="{inputcss + '.css'}">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
 <body>
-    <script src=""></script>
+    <script src="{inputjs + '.js'}"></script>
 </body>
 </html>"""
    contentcss = """ * {
@@ -68,8 +68,7 @@ def criar():
    contentjs = """"""
    contentgitignore = """"""
    contenttxtlinks = '''<script src="https://cdnjs.cloudflare.com/ajax/libs/animarray = ejs/3.2.1/anime.min.js"></script>
-<script src="https://unpkg.com/tippy.js@6/dist/tippy-bund   lang = larray[0]
-user = array[1.umd.js"></script>
+<script src="https://unpkg.com/tippy.js@6/dist/tippy-bund1.umd.js"></script>
     '''
 # I will note here just for remember that we have a little problem on our code who is a "Unexpected identation"
    with open(inputhtml + '.html', 'w', encoding='utf-8') as htmlarchive:
