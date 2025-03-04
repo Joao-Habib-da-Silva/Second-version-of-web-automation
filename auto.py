@@ -25,8 +25,9 @@ _____________________________________________________
 _____________________________________________________
                    
 Now, what you want lang do you want?"""))
-
+#Now we get the principal informations
 informações()
+#Selenium being used
 def sites():
     nav = wb.Chrome()
     nav.get("https://coolors.co")
@@ -70,7 +71,6 @@ def criar():
    contenttxtlinks = '''<script src="https://cdnjs.cloudflare.com/ajax/libs/animarray = ejs/3.2.1/anime.min.js"></script>
 <script src="https://unpkg.com/tippy.js@6/dist/tippy-bund1.umd.js"></script>
     '''
-# I will note here just for remember that we have a little problem on our code who is a "Unexpected identation"
    with open(inputhtml + '.html', 'w', encoding='utf-8') as htmlarchive:
         htmlarchive.write(contenthtml)
    with open(inputcss + '.css', 'w', encoding='utf-8') as cssarchive:
@@ -81,18 +81,21 @@ def criar():
         links.write(contenttxtlinks)
    with open(".gitignore", 'w') as git:
         git.write(contentgitignore)
-#Now we just use the function sites, for open after the born of archives
 #After we created the functions, we can begin our code really
 print(traduza("Bem vindo ao seu automatizador de códigos front-end", lang))
 print(traduza("Aqui, poderemos fazer seu código tudo arrumado, diminuindo seu tempo de fazer coisas básicas, apenas pondo a mão na massa!!", lang))
 path = input(traduza("Qual o diretório que você deseja?", lang))
+#All contents being translated with the first function
 def existir():
+    #There we are, here, the code will see if the path exists or not, or if they have basic paths
     if os.path.exists(path) != True:
         print(traduza("Seu diretório não existe, só fazemos quando o diretório exist", lang))
-    if os.path.exists(path) == True or path == 'Downloads' or path == 'downloads' or path == 'download' or path == 'downloads':
+        #I dont like the part of use a lot of or in my if, so in  my next code i will change that
+    if os.path.exists(path) == True or path == 'Downloads' or path == 'downloads' or path == 'download' or path == 'downloads' or path == 'Document' or path == 'Documents' or path == 'document' or path == 'documents':
         print(traduza("Achamos o seu diretório!", lang))
     if path == 'Downloads' or path == 'downloads' or path == 'download' or path == 'downloads' and os.path.exists(path) != True:
         download = r'~/Downloads'
+        #We use the ~ for use the os.path.expanduser, with that function of os, we dont need the users part of path
         downloadfull = os.path.expanduser(download)
         os.chdir(downloadfull)
     if path == 'Document' or path == 'Documents' or path == 'document' or path == 'documents' and os.path.exists(path) != True:
@@ -101,14 +104,16 @@ def existir():
         os.chdir(documentfull)
 existir()
 print(traduza("Agora estamos no diretório que deseja!", lang))
-pref = str(input(traduza("Por acaso você gostaria de criar uma pasta?", lang)))
-if pref == 'sim' or pref == 'Sim' or pref == 'ok' or pref == 'Ok':
+#The prefs will be like a terminal, Y or N?
+pref = str(input(traduza("Por acaso você gostaria de criar uma pasta (Y/N)?", lang)))
+if pref == 'Y' or pref == 'y':
     print(traduza("Ok, vamos criar uma para você", lang))
     pasta = str(input(traduza("Qual o nome da pasta?", lang)))
     os.mkdir(pasta)
     atual = os.getcwd()
     os.chdir(atual + "\\" + pasta)
-elif pref == 'Não' or pref == 'não':
+elif pref == 'N' or pref == 'n':
     print(traduza("Certo, você que manda!", lang))
+#Then we have the create and for least, the part who will open the Chrome pages
 criar()
 sites()
