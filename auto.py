@@ -67,20 +67,13 @@ def criar():
     overflow-x: hidden;
 }"""
    contentjs = """"""
-   contentgitignore = """"""
-   contenttxtlinks = '''<script src="https://cdnjs.cloudflare.com/ajax/libs/animarray = ejs/3.2.1/anime.min.js"></script>
-<script src="https://unpkg.com/tippy.js@6/dist/tippy-bund1.umd.js"></script>
-    '''
+  
    with open(inputhtml + '.html', 'w', encoding='utf-8') as htmlarchive:
         htmlarchive.write(contenthtml)
    with open(inputcss + '.css', 'w', encoding='utf-8') as cssarchive:
         cssarchive.write(contentcss)
    with open(inputjs + '.js', 'w', encoding='utf-8') as jsarchive:
         jsarchive.write(contentjs)
-   with open('links.txt', 'w') as links:
-        links.write(contenttxtlinks)
-   with open(".gitignore", 'w') as git:
-        git.write(contentgitignore)
 #After we created the functions, we can begin our code really
 print(traduza("Bem vindo ao seu automatizador de códigos front-end", lang))
 print(traduza("Aqui, poderemos fazer seu código tudo arrumado, diminuindo seu tempo de fazer coisas básicas, apenas pondo a mão na massa!!", lang))
